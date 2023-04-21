@@ -12,8 +12,10 @@
 
 /* farver defineres her */
 :root {
-  --black: #000000;
   --backgroundBeige: #fffef4;
+  --omadaRed: #ed6251;
+  /* bruges istedet for sort til typografier */
+  --midnight: #213740;
 }
 
 body {
@@ -24,6 +26,8 @@ a {
   text-decoration: none;
 }
 
+/* Typografier mobil format */
+
 h1 {
   font-family: "aviano-sans", sans-serif;
   font-weight: 700;
@@ -31,15 +35,17 @@ h1 {
   line-height: 30px;
   letter-spacing: 0.15em;
   max-width: 900px;
+  color: var(--omadaRed);
 }
 
 h2 {
   font-family: "aviano-sans", sans-serif;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 30px;
   letter-spacing: 0.15em;
   max-width: 900px;
+  color: var(--midnight);
 }
 
 h3 {
@@ -58,4 +64,43 @@ p {
   line-height: 30px;
   letter-spacing: 0.15em;
   max-width: 900px;
+  color: var(--midnight);
+}
+
+/* Typografier på Tablet format */
+@media (min-width: 600px) {
+  h1 {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 30px;
+    letter-spacing: 0.15em;
+    max-width: 900px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 30px;
+    letter-spacing: 0.15em;
+    max-width: 900px;
+  }
+}
+
+/* Typografier på Desktop format */
+@media (min-width: 900px) {
+  h1 {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 30px;
+    letter-spacing: 0.15em;
+    max-width: 900px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 30px;
+    letter-spacing: 0.15em;
+    max-width: 900px;
+  }
 }
