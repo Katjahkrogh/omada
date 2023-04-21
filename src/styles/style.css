@@ -34,7 +34,6 @@ h1 {
   font-size: 1rem;
   line-height: 30px;
   letter-spacing: 0.15em;
-  max-width: 900px;
   color: var(--omadaRed);
 }
 
@@ -70,15 +69,10 @@ p {
 /* Typografier på Tablet format */
 @media (min-width: 600px) {
   h1 {
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 30px;
-    letter-spacing: 0.15em;
-    max-width: 900px;
+    font-size: 3rem;
   }
 
   p {
-    font-weight: 300;
     font-size: 1rem;
     line-height: 30px;
     letter-spacing: 0.15em;
@@ -89,15 +83,19 @@ p {
 /* Typografier på Desktop format */
 @media (min-width: 900px) {
   h1 {
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 30px;
-    letter-spacing: 0.15em;
-    max-width: 900px;
+    font-size: 4.4rem;
+    line-height: 3.5rem;
+    letter-spacing: 0.25em;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 35px;
+    letter-spacing: 0.25em;
   }
 
   p {
-    font-weight: 300;
     font-size: 1rem;
     line-height: 30px;
     letter-spacing: 0.15em;
