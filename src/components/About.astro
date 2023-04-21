@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import "../styles/style.css";
 ---
 
 <section></section>
@@ -13,5 +13,10 @@ import "../styles/global.css";
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
+  }
+
+  /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
+  section {
+    max-width: 1500px;
   }
 </style>
