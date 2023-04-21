@@ -2,10 +2,57 @@
 import "../styles/style.css";
 ---
 
-<section><!-- Her laves al indhold til denne sektion --></section>
+<section>
+  <!-- Her laves al indhold til denne sektion -->
+  <h2>OMADA WINE & DELI</h2>
+  <p>Øster Farimagsgade 26</p>
+  <p>2100 København Ø</p>
+
+  <div class="open">
+    <div class="day">
+      <p>Wednesdays</p>
+      <p>11-20</p>
+    </div>
+    <div class="day">
+      <p>Thursdays</p>
+      <p>11-20</p>
+    </div>
+    <div class="day">
+      <p>Fridays</p>
+      <p>11-20</p>
+    </div>
+    <div class="day">
+      <p>Saturdays</p>
+      <p>11-20</p>
+    </div>
+    <div class="day">
+      <p>Sundays</p>
+      <p>11-20</p>
+    </div>
+  </div>
+
+  <p>Catch us here</p>
+</section>
 
 <style>
   /* Mobile first */
+  p {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 11px;
+    text-align: center;
+    letter-spacing: 0.25em;
+  }
+  .open {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+  }
+  .day {
+    display: flex;
+    justify-content: space-between;
+  }
 
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
@@ -13,6 +60,12 @@ import "../styles/style.css";
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
+    p {
+      font-size: 13px;
+    }
+    .day p {
+      font-size: 11px;
+    }
   }
 
   /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
