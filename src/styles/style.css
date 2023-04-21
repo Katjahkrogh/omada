@@ -1,0 +1,61 @@
+/* Fonte importeres her */
+
+/* fonte udskrives som font-face her */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+@import url("https://use.typekit.net/mod5ajw.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* farver defineres her */
+:root {
+  --black: #000000;
+  --backgroundBeige: #fffef4;
+}
+
+body {
+  background-color: var(--backgroundBeige);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "aviano-sans", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 30px;
+  letter-spacing: 0.15em;
+  max-width: 900px;
+}
+
+h2 {
+  font-family: "aviano-sans", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 30px;
+  letter-spacing: 0.15em;
+  max-width: 900px;
+}
+
+h3 {
+  font-family: "aviano-sans", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 30px;
+  letter-spacing: 0.15em;
+  max-width: 900px;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 30px;
+  letter-spacing: 0.15em;
+  max-width: 900px;
+}
