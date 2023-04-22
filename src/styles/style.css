@@ -25,7 +25,14 @@ body {
 a {
   text-decoration: none;
 }
-
+/* basis styling af streger */
+hr {
+  height: 1px;
+  border-width: 0;
+  color: var(--omadaRed);
+  background-color: var(--omadaRed);
+  margin: 12px 0;
+}
 /* Typografier mobil format */
 
 h1 {
