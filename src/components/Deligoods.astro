@@ -3,10 +3,11 @@ import "../styles/style.css";
 ---
 
 <section>
+  <h3>Deli goods</h3>
   <hr />
   <div class="deli-goods">
     <div class="wrapper">
-      <p class="arrow">&#x3c;</p>
+      <p id="left" class="arrow">&#x3c;</p>
       <div class="carousel">
         <img src="../images/tryout.jpg" alt="img" />
         <img src="../images/tryout.jpg" alt="img" />
@@ -15,7 +16,7 @@ import "../styles/style.css";
         <img src="../images/tryout.jpg" alt="img" />
         <img src="../images/tryout.jpg" alt="img" />
       </div>
-      <p class="arrow">&#x3e;</p>
+      <p id="right" class="arrow">&#x3e;</p>
     </div>
   </div>
 </section>
@@ -62,6 +63,7 @@ import "../styles/style.css";
     font-size: 0px;
     overflow: hidden;
     white-space: nowrap;
+    scroll-behavior: smooth;
   }
 
   img {
@@ -127,12 +129,21 @@ import "../styles/style.css";
 </style>
 
 <script>
-  const carousel = document.querySelector(".carousel");
-  const arrowIcons = document.querySelectorAll(".arrow");
+  const carousel = document.querySelector(".carousel"),
+    firstImg = carousel.querySelector("img")[0],
+    arrowIcons = document.querySelectorAll(".wrapper .arrow");
 
   let isDragStart = false,
     prevPageX,
     prevScrollLeft;
+
+  let firstImgWidth = firstImg.clientWidth + 10;
+
+  arrowIcons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+    });
+  });
 
   const dragStart = (e) => {
     isDragStart = true;
