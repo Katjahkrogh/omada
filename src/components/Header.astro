@@ -2,16 +2,63 @@
 import "../styles/style.css";
 ---
 
-<section><!-- Her laves al indhold til denne sektion --></section>
+<section>
+  <div id="deli">
+    <img
+      src="../public/illustrations/delicaties.svg"
+      alt="Delikatesse food illustration"
+    />
+  </div>
+  <h1>OMADA WINE & DELI</h1>
+  <hr />
+  <h5>Open wed-sun 11-20</h5>
+  <hr />
+</section>
 
 <style>
   /* Mobile first */
 
+  #deli {
+    display: flex;
+    align-content: right;
+    justify-content: right;
+  }
+  img {
+    width: 60%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
+    h5 {
+      font-size: 25px;
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+    h1 {
+      margin-bottom: 3%;
+    }
+    img {
+      width: 50%;
+    }
   }
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
+    img {
+      width: 50%;
+    }
+    h1 {
+      margin-bottom: 3%;
+    }
+
+    h5 {
+      font-size: 30px;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
   }
 </style>
