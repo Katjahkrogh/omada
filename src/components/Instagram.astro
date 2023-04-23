@@ -3,26 +3,85 @@ import "../styles/style.css";
 ---
 
 <section>
-  <h3>Instagram</h3>
-  <hr>
+  <div id="overskrift">
+    <h3>Instagram</h3>
+  </div>
+  <div>
+    <hr />
+    <h4>@omada.wine</h4>
+  </div>
+  <div id="insta">
+    <img src="../public/images/insta-1.png" alt="SoMe billede" />
+    <img src="../public/images/insta2.png" alt="SoMe billede" />
+    <img src="../public/images/insta3.png" alt="SoMe billede" />
+  </div>
 </section>
 
 <style>
   /* Mobile first */
+
   h3 {
     color: var(--omadaRed);
   }
 
-  hr{
-    
+  h4 {
+    text-align: right;
   }
 
+  hr {
+    width: 60vw;
+    margin-left: 40%;
+  }
+
+  #insta {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+  }
+
+  img {
+    width: 108px;
+    height: 110px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #overskrift {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+  }
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
+    img {
+      width: 208px;
+      height: 210px;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+    }
   }
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+    }
+
+    img {
+      width: 308px;
+      height: 310px;
+    }
   }
 
   /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
