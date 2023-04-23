@@ -2,21 +2,91 @@
 import "../styles/style.css";
 ---
 
-<section><!-- Her laves al indhold til denne sektion --></section>
+<section>
+  <h3>Deli Goods</h3>
+  <hr />
+  <div class="deli-goods">
+    <div class="wrapper">
+      <p class="arrow">&#x3c;</p>
+      <div class="carousel">
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+      </div>
+      <p class="arrow">&#x3e;</p>
+    </div>
+  </div>
+</section>
 
 <style>
   /* Mobile first */
+  hr {
+    width: 60vw;
+  }
+  .deli-goods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 35px;
+  }
+  .wrapper {
+    /* max-width: 100vw; */
 
+    position: relative;
+  }
+  .wrapper .arrow {
+    background-color: white;
+    color: var(--omadaRed);
+    font-weight: 700;
+    height: 46px;
+    width: 46px;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid var(--omadaRed);
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .wrapper .arrow:first-child {
+    left: -23px;
+  }
+
+  .wrapper .arrow:last-child {
+    right: -23px;
+  }
+  .carousel {
+    cursor: pointer;
+    font-size: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  img {
+    height: 340px;
+    width: calc(100% / 3);
+    object-fit: cover;
+    margin-left: 14px;
+  }
+
+  .carousel img:first-child {
+    margin-left: 0px;
+  }
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
+    /* img {
+      width: calc(100% / 2);
+    } */
   }
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
-  }
-
-  /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
-  section {
-    max-width: 1500px;
+    /* img {
+      width: calc(100% / 3);
+    } */
   }
 </style>
