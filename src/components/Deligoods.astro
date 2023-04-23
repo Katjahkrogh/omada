@@ -30,34 +30,33 @@ import "../styles/style.css";
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 35px;
+    padding: 0 10px;
   }
   .wrapper {
-    /* max-width: 100vw; */
+    max-width: 1200px;
 
     position: relative;
   }
   .wrapper .arrow {
-    background-color: white;
-    color: var(--omadaRed);
+    background-color: var(--omadaRed);
+    color: var(--backgroundBeige);
     font-weight: 700;
-    height: 46px;
-    width: 46px;
-    line-height: 46px;
+    font-size: 8px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
     text-align: center;
     border-radius: 50%;
-    border: 1px solid var(--omadaRed);
-
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
   .wrapper .arrow:first-child {
-    left: -23px;
+    left: -9px;
   }
 
   .wrapper .arrow:last-child {
-    right: -23px;
+    right: -9px;
   }
   .carousel {
     cursor: pointer;
@@ -67,10 +66,10 @@ import "../styles/style.css";
   }
 
   img {
-    height: 340px;
-    width: calc(100% / 3);
+    height: 25vw;
+    width: calc(100% / 4);
     object-fit: cover;
-    margin-left: 14px;
+    margin-left: 6px;
   }
 
   .carousel img:first-child {
@@ -78,15 +77,54 @@ import "../styles/style.css";
   }
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
-    /* img {
-      width: calc(100% / 2);
-    } */
+    .wrapper .arrow {
+      font-size: 12px;
+      height: 28px;
+      width: 28px;
+      line-height: 28px;
+    }
+
+    img {
+      margin-left: 10px;
+    }
+
+    .deli-goods {
+      padding: 0 20px;
+    }
+
+    .wrapper .arrow:first-child {
+      left: -15px;
+    }
+
+    .wrapper .arrow:last-child {
+      right: -15px;
+    }
   }
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
-    /* img {
-      width: calc(100% / 3);
-    } */
+    .wrapper .arrow {
+      font-size: 16px;
+      height: 46px;
+      width: 46px;
+      line-height: 46px;
+    }
+
+    img {
+      margin-left: 14px;
+    }
+    .deli-goods {
+      padding: 0 35px;
+    }
+
+    .wrapper .arrow:first-child {
+      left: -23px;
+    }
+
+    .wrapper .arrow:last-child {
+      right: -23px;
+    }
   }
 </style>
+
+<script></script>
