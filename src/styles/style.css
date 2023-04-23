@@ -25,13 +25,20 @@ body {
 a {
   text-decoration: none;
 }
-
+/* basis styling af streger */
+hr {
+  height: 1px;
+  border-width: 0;
+  color: var(--omadaRed);
+  background-color: var(--omadaRed);
+  margin: 12px 0;
+}
 /* Typografier mobil format */
 
 h1 {
   font-family: "aviano-sans", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 30px;
   letter-spacing: 0.15em;
   color: var(--omadaRed);
@@ -40,7 +47,7 @@ h1 {
 h2 {
   font-family: "aviano-sans", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 30px;
   letter-spacing: 0.15em;
   max-width: 900px;
@@ -48,12 +55,46 @@ h2 {
 }
 
 h3 {
-  font-family: "aviano-sans", sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 30px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.25em;
   max-width: 900px;
+  color: var(--omadaRed);
+}
+
+h6 {
+  font-family: "Aviano Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.25em;
+  color: var(--omadaRed);
+}
+
+h4 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.35em;
+  color: var(--omadaRed);
+}
+
+h5 {
+  font-family: "Aviano Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 11px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--midnight);
 }
 
 p {
@@ -70,6 +111,10 @@ p {
 @media (min-width: 600px) {
   h1 {
     font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 
   p {

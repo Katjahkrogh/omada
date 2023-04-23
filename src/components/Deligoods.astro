@@ -2,21 +2,160 @@
 import "../styles/style.css";
 ---
 
-<section><!-- Her laves al indhold til denne sektion --></section>
+<section>
+  <h3>Deli Goods</h3>
+  <h4>@omada.wine</h4>
+  <h5>@omada.wine</h5>
+  <h6>@omada.wine</h6>
+  <hr />
+  <div class="deli-goods">
+    <div class="wrapper">
+      <p class="arrow">&#x3c;</p>
+      <div class="carousel">
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" />
+      </div>
+      <p class="arrow">&#x3e;</p>
+    </div>
+  </div>
+</section>
 
 <style>
   /* Mobile first */
+  hr {
+    width: 60vw;
+  }
+  .deli-goods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+  }
+  .wrapper {
+    max-width: 1200px;
 
+    position: relative;
+  }
+  .wrapper .arrow {
+    background-color: var(--omadaRed);
+    color: var(--backgroundBeige);
+    font-weight: 700;
+    font-size: 8px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .wrapper .arrow:first-child {
+    left: -9px;
+  }
+
+  .wrapper .arrow:last-child {
+    right: -9px;
+  }
+  .carousel {
+    cursor: pointer;
+    font-size: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  img {
+    height: 25vw;
+    width: calc(100% / 4);
+    object-fit: cover;
+    margin-left: 6px;
+  }
+
+  .carousel img:first-child {
+    margin-left: 0px;
+  }
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
+    .wrapper .arrow {
+      font-size: 12px;
+      height: 28px;
+      width: 28px;
+      line-height: 28px;
+    }
+
+    img {
+      margin-left: 10px;
+    }
+
+    .deli-goods {
+      padding: 0 20px;
+    }
+
+    .wrapper .arrow:first-child {
+      left: -15px;
+    }
+
+    .wrapper .arrow:last-child {
+      right: -15px;
+    }
   }
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
-  }
+    .wrapper .arrow {
+      font-size: 16px;
+      height: 46px;
+      width: 46px;
+      line-height: 46px;
+    }
 
-  /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
-  section {
-    max-width: 1500px;
+    img {
+      margin-left: 14px;
+    }
+    .deli-goods {
+      padding: 0 35px;
+    }
+
+    .wrapper .arrow:first-child {
+      left: -23px;
+    }
+
+    .wrapper .arrow:last-child {
+      right: -23px;
+    }
   }
 </style>
+
+<script>
+  const carousel = document.querySelector(".carousel");
+  const arrowIcons = document.querySelectorAll(".arrow");
+
+  let isDragStart = false,
+    prevPageX,
+    prevScrollLeft;
+
+  const dragStart = (e) => {
+    isDragStart = true;
+    prevPageX = e.pageX;
+    prevScrollLeft = carousel.scrollLeft;
+  };
+
+  const dragging = (e) => {
+    if (!isDragStart) return;
+    e.preventDefault();
+    let positionDiff = e.pageX - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
+  };
+
+  const dragStop = () => {
+    let isDragStart = false;
+  };
+
+  carousel.addEventListener("mousedown", dragStart);
+  carousel.addEventListener("mousemove", dragging);
+  carousel.addEventListener("mouseup", dragStop);
+</script>
