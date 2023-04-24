@@ -3,23 +3,20 @@ import "../styles/style.css";
 ---
 
 <section>
-  <h3>Deli Goods</h3>
-  <h4>@omada.wine</h4>
-  <h5>@omada.wine</h5>
-  <h6>@omada.wine</h6>
+  <h3>Deli goods</h3>
   <hr />
   <div class="deli-goods">
     <div class="wrapper">
-      <p class="arrow">&#x3c;</p>
+      <button id="left" class="arrow">&#x3c;</button>
       <div class="carousel">
-        <img src="../images/tryout.jpg" alt="img" />
-        <img src="../images/tryout.jpg" alt="img" />
-        <img src="../images/tryout.jpg" alt="img" />
-        <img src="../images/tryout.jpg" alt="img" />
-        <img src="../images/tryout.jpg" alt="img" />
-        <img src="../images/tryout.jpg" alt="img" />
+        <img src="../images/tryout.jpg" alt="img" draggable="false" />
+        <img src="../images/tryout.jpg" alt="img" draggable="false" />
+        <img src="../images/tryout.jpg" alt="img" draggable="false" />
+        <img src="../images/tryout.jpg" alt="img" draggable="false" />
+        <img src="../images/tryout.jpg" alt="img" draggable="false" />
+        <img src="../images/tryout.jpg" alt="img" draggable="false" />
       </div>
-      <p class="arrow">&#x3e;</p>
+      <button id="right" class="arrow">&#x3e;</button>
     </div>
   </div>
 </section>
@@ -53,9 +50,12 @@ import "../styles/style.css";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    border: none;
   }
   .wrapper .arrow:first-child {
     left: -9px;
+    /* udkommenter her */
+    /* display: none; */
   }
 
   .wrapper .arrow:last-child {
@@ -66,6 +66,15 @@ import "../styles/style.css";
     font-size: 0px;
     overflow: hidden;
     white-space: nowrap;
+    scroll-behavior: smooth;
+  }
+
+  .carousel.dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging img {
+    pointer-events: none;
   }
 
   img {
@@ -132,30 +141,77 @@ import "../styles/style.css";
 
 <script>
   const carousel = document.querySelector(".carousel");
-  const arrowIcons = document.querySelectorAll(".arrow");
+  const firstImg = carousel.querySelectorAll("img")[0];
+  const arrowIcons = document.querySelectorAll(".wrapper .arrow");
 
   let isDragStart = false,
+    isDragging = false,
     prevPageX,
-    prevScrollLeft;
+    prevScrollLeft,
+    positionDiff;
+
+  // udkommenter her
+  // const showHideIcons = () => {
+  //   let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+  //   arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+  //   arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+  // };
+
+  arrowIcons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      let firstImgWidth = firstImg.clientWidth + 10; // den forstår ikke clientWidth.....
+      carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+      // // udkommenter her
+      // showHideIcons();
+      // setTimeout(() => showHideIcons(), 60);
+    });
+  });
+
+  const autoSlide = () => {
+    if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth) return;
+
+    positionDiff = Math.abs(positionDiff);
+    let firstImgWidth = firstImg.clientWidth + 10;
+    let valDifference = firstImgWidth - positionDiff;
+    if (carousel.scrollLeft > positionDiff) {
+      console.log("bruger scroller til højre");
+      return (carousel.scrollLeft += positionDiff > firstImgWidth / 4 ? valDifference : -positionDiff);
+    }
+    return (carousel.scrollLeft -= positionDiff > firstImgWidth / 4 ? valDifference : -positionDiff);
+  };
 
   const dragStart = (e) => {
     isDragStart = true;
-    prevPageX = e.pageX;
+    prevPageX = e.pageX || e.touches[0].pageX;
     prevScrollLeft = carousel.scrollLeft;
   };
 
   const dragging = (e) => {
     if (!isDragStart) return;
     e.preventDefault();
-    let positionDiff = e.pageX - prevPageX;
+    isDragging = true;
+    carousel.classList.add("dragging");
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
     carousel.scrollLeft = prevScrollLeft - positionDiff;
+    // udkommenter her
+    // showHideIcons();
   };
 
   const dragStop = () => {
     let isDragStart = false;
+    carousel.classList.remove("dragging");
+    if (!isDragging) return;
+    isDragging = false;
+    autoSlide();
   };
 
   carousel.addEventListener("mousedown", dragStart);
+  carousel.addEventListener("touchstart", dragStart);
+
   carousel.addEventListener("mousemove", dragging);
+  carousel.addEventListener("touchmove", dragging);
+
   carousel.addEventListener("mouseup", dragStop);
+  carousel.addEventListener("mouseleave", dragStop);
+  carousel.addEventListener("touchend", dragStop);
 </script>
