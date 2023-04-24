@@ -5,12 +5,14 @@ import "../styles/style.css";
 <section>
   <!-- Her laves al indhold til denne sektion -->
 
-  <div id="overskrift"><h3>Tastings & Funktions</h3></div>
+  <div id="overskrift"><h3>Tastings & Functions</h3></div>
   <hr class="line1" />
   <hr class="line2" />
   <div class="tastings-container">
     <hr class="border-line-over" /><div class="open-tastings">
-      <h4>Puplic tastings</h4>
+      <div class="button-display">
+        <h4>Puplic tastings</h4><div class="button-down"></div>
+      </div>
 
       <!-- open tastings åbne vindue -->
       <article class="public">
@@ -25,7 +27,9 @@ import "../styles/style.css";
     </div><hr class="border-line-under" />
 
     <hr class="border-line-over" /><div class="open-tastings">
-      <h4>Private tastings</h4>
+      <div class="button-display">
+        <h4>Private tastings</h4><div class="button-down"></div>
+      </div>
       <!-- private tastings åbne vindue -->
       <article class="private">
         <h5>Open Wine Tasting</h5>
@@ -40,7 +44,9 @@ import "../styles/style.css";
     <hr class="border-line-under" />
 
     <hr class="border-line-over" /><div class="open-tastings">
-      <h4>Private funktions</h4>
+      <div class="button-display">
+        <h4>Private functions</h4><div class="button-down"></div>
+      </div>
       <!-- private functions åbne vindue -->
       <article class="functions">
         <h5>Open Wine Tasting</h5>
@@ -137,6 +143,52 @@ import "../styles/style.css";
   .line2 {
     width: 93vw;
     margin-left: 7%;
+  }
+
+  .button-display {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-up,
+  .button-down {
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+    background: var(--backgroundBeige);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+  }
+
+  .button-down:hover {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  .button-up:hover {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  .button-up::after,
+  .button-down::after {
+    content: "";
+    position: absolute;
+    left: 6.4px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid var(--omadaRed);
+    border-left: 2px solid var(--omadaRed);
+  }
+  .button-up::after {
+    top: 2px;
+    transform: rotate(45deg);
+  }
+
+  .button-down::after {
+    top: 5.5px;
+    transform: rotate(225deg);
   }
 
   /* tablet format (over 600px)*/
