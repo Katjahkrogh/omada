@@ -9,7 +9,7 @@ import "../styles/style.css";
   <hr class="line1" />
   <hr class="line2" />
   <div class="tastings-container">
-    <hr class="border-line" /><div class="open-tastings">
+    <hr class="border-line-over" /><div class="open-tastings">
       <h4>Puplic tastings</h4>
 
       <!-- open tastings åbne vindue -->
@@ -22,10 +22,10 @@ import "../styles/style.css";
         </div>
         <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
       </article>
-    </div><hr class="border-line" />
-    <hr class="border-line" /><div class="open-tastings">
-      <h4>Private tastings</h4>
+    </div><hr class="border-line-under" />
 
+    <hr class="border-line-over" /><div class="open-tastings">
+      <h4>Private tastings</h4>
       <!-- private tastings åbne vindue -->
       <article class="private">
         <h5>Open Wine Tasting</h5>
@@ -37,9 +37,10 @@ import "../styles/style.css";
         <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
       </article>
     </div>
-    <hr class="border-line" /><hr class="border-line" /><div class="open-tastings">
-      <h4>Private funktions</h4>
+    <hr class="border-line-under" />
 
+    <hr class="border-line-over" /><div class="open-tastings">
+      <h4>Private funktions</h4>
       <!-- private functions åbne vindue -->
       <article class="functions">
         <h5>Open Wine Tasting</h5>
@@ -50,7 +51,7 @@ import "../styles/style.css";
         </div>
         <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
       </article>
-    </div><hr class="border-line" />
+    </div><hr class="border-line-under" />
   </div>
 </section>
 
@@ -60,6 +61,7 @@ import "../styles/style.css";
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
   }
   /* justerer de ydre kanter rundt om menuerne */
   .tastings-container .open-tastings {
@@ -69,9 +71,14 @@ import "../styles/style.css";
   }
 
   /* justerer de øvre og nedre kanter rundt om menuerne */
-  .border-line {
+  .border-line-over {
     width: 180px;
     margin: 5px;
+  }
+
+  .border-line-under {
+    width: 180px;
+    margin: 5px 5px 20px;
   }
 
   .tastings-container div .price {
