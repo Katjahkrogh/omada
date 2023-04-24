@@ -2,10 +2,135 @@
 import "../styles/style.css";
 ---
 
-<section><!-- Her laves al indhold til denne sektion --></section>
+<section>
+  <!-- Her laves al indhold til denne sektion -->
+
+  <div id="overskrift"><h3>Tastings & Funktions</h3></div>
+  <hr class="line1" />
+  <hr class="line2" />
+  <div class="tastings-container">
+    <hr class="border-line" /><div class="open-tastings">
+      <h4>Puplic tastings</h4>
+
+      <!-- open tastings åbne vindue -->
+      <article class="public">
+        <h5>Open Wine Tasting</h5>
+        <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
+        <div class="price">
+          <p class="dkk">DKK 145,-</p>
+          <p class="note">per person <br /> including 6 tasting glasses.</p>
+        </div>
+        <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
+      </article>
+    </div><hr class="border-line" />
+    <hr class="border-line" /><div class="open-tastings">
+      <h4>Private tastings</h4>
+
+      <!-- private tastings åbne vindue -->
+      <article class="private">
+        <h5>Open Wine Tasting</h5>
+        <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
+        <div class="price">
+          <p class="dkk">DKK 145,-</p>
+          <p class="note">per person <br /> including 6 tasting glasses.</p>
+        </div>
+        <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
+      </article>
+    </div>
+    <hr class="border-line" /><hr class="border-line" /><div class="open-tastings">
+      <h4>Private funktions</h4>
+
+      <!-- private functions åbne vindue -->
+      <article class="functions">
+        <h5>Open Wine Tasting</h5>
+        <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
+        <div class="price">
+          <p class="dkk">DKK 145,-</p>
+          <p class="note">per person <br /> including 6 tasting glasses.</p>
+        </div>
+        <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
+      </article>
+    </div><hr class="border-line" />
+  </div>
+</section>
 
 <style>
   /* Mobile first */
+  .tastings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* justerer de ydre kanter rundt om menuerne */
+  .tastings-container .open-tastings {
+    min-width: 200px;
+    border-left: 1px var(--omadaRed) solid;
+    border-right: 1px var(--omadaRed) solid;
+  }
+
+  /* justerer de øvre og nedre kanter rundt om menuerne */
+  .border-line {
+    width: 180px;
+    margin: 5px;
+  }
+
+  .tastings-container div .price {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  article {
+    width: 285px;
+    margin: 5px 15px;
+  }
+  .public {
+    /* sørg for at den kan åbne, når man klikker på knappen */
+    display: none;
+  }
+  .private {
+    /* sørg for at den kan åbne, når man klikker på knappen */
+    display: none;
+  }
+  .functions {
+    /* sørg for at den kan åbne, når man klikker på knappen */
+    display: none;
+  }
+  .price p {
+    line-height: 10px;
+  }
+  .dkk {
+    font-family: "aviano-sans", sans-serif;
+    font-weight: 700;
+    padding: 20px 0 5px;
+  }
+
+  .note {
+    font-style: italic;
+    font-size: 8px;
+    padding: 0 0 20px;
+  }
+  h4 {
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 30px;
+  }
+
+  #overskrift {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+  }
+  .line1 {
+    width: 83vw;
+  }
+  .line2 {
+    width: 93vw;
+    margin-left: 7%;
+  }
 
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
