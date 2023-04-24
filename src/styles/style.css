@@ -61,6 +61,7 @@ h3 {
   line-height: 30px;
   letter-spacing: 0.25em;
   max-width: 900px;
+  text-align: center;
   color: var(--omadaRed);
 }
 
@@ -82,6 +83,7 @@ h4 {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.35em;
+  margin-bottom: 10px;
   color: var(--omadaRed);
 }
 
@@ -119,10 +121,12 @@ p {
 
   h3 {
     font-size: 1.8rem;
+    line-height: 50px;
   }
 
   h4 {
     font-size: 1rem;
+    margin-bottom: 16px;
   }
   p {
     font-size: 1rem;
@@ -149,10 +153,13 @@ p {
 
   h3 {
     font-size: 2.5rem;
+    line-height: 65px;
   }
 
   h4 {
     font-size: 1.5rem;
+    line-height: 25px;
+    margin-bottom: 20px;
   }
 
   p {

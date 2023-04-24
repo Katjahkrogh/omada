@@ -3,7 +3,7 @@ import "../styles/style.css";
 ---
 
 <section>
-  <h3>Deli goods</h3>
+  <div id="overskrift"><h3>Deli goods</h3></div>
   <hr />
   <div class="deli-goods">
     <div class="wrapper">
@@ -25,6 +25,12 @@ import "../styles/style.css";
   /* Mobile first */
   hr {
     width: 60vw;
+  }
+  #overskrift {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
   }
   .deli-goods {
     display: flex;
