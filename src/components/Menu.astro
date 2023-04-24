@@ -2,17 +2,62 @@
 import "../styles/style.css";
 ---
 
-<section><!-- Her laves al indhold til denne sektion --></section>
+<section>
+  <h5>TRY OUR LOCALLY SOURCED DELICACIES</h5>
+  <div class="container">
+    <img
+      src="../public/illustrations/delicaties.svg"
+      alt="Delikatesse food illustration"
+      id="deli"
+    />
+  </div>
+  <h5>TASTE OUR SELECTION OF NATURAL WINES</h5>
+  <div class="container">
+    <img
+      src="../public/illustrations/vin-illustrationer.png"
+      alt="Illustrationer af vin"
+      id="vin"
+    />
+  </div>
+</section>
 
 <style>
   /* Mobile first */
 
-  /* tablet format (over 600px)*/
-  @media (min-width: 600px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h5 {
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 
+  #deli {
+    width: 60%;
+  }
+
+  #vin {
+    width: 92%;
+  }
+  /* tablet format (over 600px)*/
+  @media (min-width: 600px) {
+    h5 {
+      font-size: 25px;
+    }
+    #deli {
+      width: 50%;
+  }
+  }
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
+    h5 {
+      font-size: 30px;
+    }
+    #deli {
+      width: 50%;
+    }
   }
 
   /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
