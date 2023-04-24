@@ -2,19 +2,92 @@
 import "../styles/style.css";
 ---
 
-<section>
+<section id="about_sec">
   <!-- Her laves al indhold til denne sektion -->
+  <h2>About</h2>
+  <h1>OMADA WINE & DELI</h1>
+  <h3>
+    Thirsty? Peckish? Curious? We’ve got you covered!  </h3>
+    <div id="p_about">
+    <p>
+      Omada Wine & Deli in Østerbro, Copenhagen, is the new omada.wine headquarters – and our brand new bottle shop and deli.
+      </p>
+      <p>
+      Here, we curate your simple needs for life’s better necessities; wine & food.
+    </p>
+    <p>
+      In the shop you can find the complete line up of natural wine, cider and other mixed fermentations that you know from omada.wine. And you may even enjoy a glass of wine before you decide which bottle to take home.
+    </p>
+  </div>
 </section>
 
 <style>
+
+#about_sec h1{
+  border-bottom: 2px solid var(--omadaRed);
+  width: 100vw;
+  padding-bottom: 1vw;
+}
+#about_sec{
+  margin-top: 4em;
+  margin-bottom: 4em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1em;
+}
+
+#about_sec h3 {
+  width: 34vw;
+    display: flex;
+    align-self: center;
+}
+
   /* Mobile first */
 
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
+    #p_about{
+  display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 70vw;
+    align-self: center;
+    gap: 2em;
+    align-items: center;
+}
+#about_sec{
+      margin-top: 4em;
+    margin-bottom: 4em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+    align-items: center;
+
   }
+  }  
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
+    #about_sec{
+      margin-top: 4em;
+    margin-bottom: 4em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+    align-items: center;
+}
+#p_about{
+  display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 50vw;
+    align-self: center;
+    gap: 2em;
+    align-items: center;
+}
   }
 
   /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
