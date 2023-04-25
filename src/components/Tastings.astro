@@ -16,7 +16,7 @@ import "../styles/style.css";
 
       <!-- open tastings åbne vindue -->
       <article class="public hide">
-        <h5>Open Wine Tasting</h5>
+        <h5 class="public">Open Wine Tasting</h5>
         <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
         <div class="price">
           <p class="dkk">DKK 145,-</p>
@@ -279,7 +279,7 @@ import "../styles/style.css";
   const tastingsPrivate = document.querySelector("private");
   const functionsPrivate = document.querySelector("functions");
 
-  tastingsPublic.addEventListener("click", openBox());
+  tastingsPublic.addEventListener("click", openBox);
 
   function openBox() {
     tastingsPublic.classList.remove("hide");
