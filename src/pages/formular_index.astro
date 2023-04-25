@@ -1,0 +1,66 @@
+---
+import Form from "../components/Form.astro";
+import Testimonal from "../components/Testimonal.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
+import "../styles/style.css";
+
+const url =
+  "https://bwzhyxrwqgaljabpwzkv.supabase.co/rest/v1/Test_Omada?approved=is.true";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3emh5eHJ3cWdhbGphYnB3emt2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc4NTUzOSwiZXhwIjoxOTk0MzYxNTM5fQ.5smRtnAz3FsKaJbRhwP6wxfXYCogrpdRPYJnDryGDAo";
+
+const response = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: key,
+    Accept: "application/json",
+    "Content-type": "application/json",
+  },
+});
+
+const udsagn = await response.json();
+---
+
+<section id="formular">
+  <Form />
+  <br />
+  <hr class="hr_1" />
+  <hr class="hr_2" />
+  <h2>What our customers say</h2>
+  <hr class="hr_3" />
+  <section id="anmedelser">
+    <ul>
+      {
+        udsagn.map((testimonal) => {
+          return (
+            <Testimonal
+              navn={testimonal.navn}
+              beskrivelse={testimonal.beskrivelse}
+            />
+          );
+        })
+      }
+    </ul>
+  </section>
+</section>
+
+<style>
+  #anmedelser {
+    display: flex;
+    overflow-x: scroll;
+  }
+  .hr_1 {
+    width: 60vw;
+    margin-right: 40%;
+  }
+  .hr_2 {
+    width: 80vw;
+    margin-right: 40%;
+  }
+  .hr_3 {
+    width: 60vw;
+    margin-left: 40%;
+  }
+  @media screen and (min-width: 900px) {
+  }
+</style>
