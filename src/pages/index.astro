@@ -64,7 +64,10 @@ import "../styles/style.css";
     document.getElementById("content").classList.remove("hidden");
   });
 
-  function reloadPage() {
-    location.reload();
-  }
+  window.onload = function() {
+        if(!window.location.hash) {
+          window.location = window.location + '#loaded';
+          window.location.reload();
+        }
+      }
 </script>
