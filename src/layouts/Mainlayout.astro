@@ -9,6 +9,10 @@ import Tastings from "../components/Tastings.astro";
 import "../styles/style.css";
 ---
 
+<script
+  src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+></script>
+
 <main>
   <Header />
   <About />
@@ -16,13 +20,48 @@ import "../styles/style.css";
   <Tastings />
   <Deligoods />
   <Instagram />
+  <a href="#header"
+    ><lottie-player
+      src="https://assets9.lottiefiles.com/packages/lf20_xjm3bcjy.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay></lottie-player></a
+  >
   <Footer />
 </main>
 
 <style>
-  /* main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } */
+  lottie-player {
+    width: 40px;
+    height: 40px;
+    margin-left: 87%;
+    border: 1px solid var(--midnight);
+    border-radius: 70px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (min-width: 600px) {
+    lottie-player {
+      width: 60px;
+      height: 60px;
+      margin-left: 90%;
+      margin-top: 2%;
+      border: 1px solid var(--midnight);
+      border-radius: 70px;
+    }
+  }
+  /* desktop format (over 900px)*/
+  @media (min-width: 900px) {
+    lottie-player {
+      width: 80px;
+      height: 80px;
+      margin-left: 92%;
+      border: 1px solid var(--midnight);
+      border-radius: 70px;
+    }
+  }
 </style>
