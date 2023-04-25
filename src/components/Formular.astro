@@ -1,0 +1,38 @@
+---
+---
+
+<form>
+  <label for="navn">Navn:</label>
+  <imput type="text" name="navn" required></imput>
+  <label for="beskrivelse">Besked:</label>
+  <imput type="text" name="beskrivelse" required></imput>
+  <button>Sende</button>
+</form>
+
+<script>
+  const url = "https://bwzhyxrwqgaljabpwzkv.supabase.co/rest/v1/Test_Omada";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3emh5eHJ3cWdhbGphYnB3emt2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc4NTUzOSwiZXhwIjoxOTk0MzYxNTM5fQ.5smRtnAz3FsKaJbRhwP6wxfXYCogrpdRPYJnDryGDAo";
+
+  const form = document.querySelector("form");
+  form.addEventListener("sumit", sendForm);
+
+  function sendForm(event) {
+    event.preeventDefault();
+    const formData = form.elements;
+    let navn = formData.navn.value;
+    let beskrivelse = formData.beskrivelse.value;
+
+    console.log(formData.name.value);
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        apikey: key,
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ navn, beskrivelse }),
+    });
+  }
+</script>
