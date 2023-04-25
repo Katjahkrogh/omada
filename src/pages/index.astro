@@ -9,22 +9,14 @@ import "../styles/style.css";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <script
-      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
-    ></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Omada Deli</title>
   </head>
   <body>
     <div id="loader">
       <div class="loader-container">
-        <lottie-player
-          src="https://assets5.lottiefiles.com/private_files/lf30_cZ4uMr.json"
-          background="transparent"
-          speed="1"
-          style="width: 300px; height: 300px;"
-          loop
-          autoplay></lottie-player>
+        <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_cZ4uMr.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
       </div>
     </div>
     <div id="content" class="hidden">
@@ -63,5 +55,4 @@ import "../styles/style.css";
     document.getElementById("loader").style.display = "none";
     document.getElementById("content").classList.remove("hidden");
   });
-
 </script>

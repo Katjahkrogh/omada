@@ -2,7 +2,7 @@
 import "../styles/style.css";
 ---
 
-<section>
+<section id="tastings">
   <!-- Her laves al indhold til denne sektion -->
 
   <div id="overskrift"><h3>Tastings & Functions</h3></div>
@@ -32,13 +32,29 @@ import "../styles/style.css";
       </div>
       <!-- private tastings åbne vindue -->
       <article class="private">
-        <h5>Open Wine Tasting</h5>
-        <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
+        <p>We do custom tailored private tastings and functions to fit your exact needs.</p>
+        <p>And otherwise we offer the following plug and play solutions (minimum 4 people and up to 30):</p>
+
+        <h5>Intro to Mixed fermentation</h5>
+        <p>A quick session on cider, fruit pét-nat and other mixed fermentations. Approximately 1 hour.</p>
         <div class="price">
-          <p class="dkk">DKK 145,-</p>
-          <p class="note">per person <br /> including 6 tasting glasses.</p>
+          <p class="dkk">DKK 199,-</p>
+          <p class="note">per person <br /> (with snacks + DKK 49,-)</p>
         </div>
-        <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
+
+        <h5>Natural Wine: 101</h5>
+        <p>A general introduction to the world of natural wine, its history, values, style and taste. Approximately 1 hour.</p>
+        <div class="price">
+          <p class="dkk">DKK 349,-</p>
+          <p class="note">per person <br /> (with snacks + DKK 75,-)</p>
+        </div>
+
+        <h5>Natural Wine: Deep Cuts from the Cellar</h5>
+        <p>A tour de force in natural wine with some of our high-end cuvées and rare vintages, curated from our cellar. Approximately 1-2 hours.</p>
+        <div class="price">
+          <p class="dkk">DKK 499,-</p>
+          <p class="note">per person <br /> (with snacks + DKK 75,-)</p>
+        </div>
       </article>
     </div>
     <hr class="border-line-under" />
@@ -49,13 +65,13 @@ import "../styles/style.css";
       </div>
       <!-- private functions åbne vindue -->
       <article class="functions">
-        <h5>Open Wine Tasting</h5>
-        <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
-        <div class="price">
-          <p class="dkk">DKK 145,-</p>
-          <p class="note">per person <br /> including 6 tasting glasses.</p>
+        <p>Host your next private or business function in Omada Wine & Deli; a unique and intimate setting for special occasions and celebrations.</p>
+        <p>Can’t make it to Østerbro? No problem! We also rent out our tap systems and tasting glasses for private functions and events.</p>
+        <p>Contact us for more information.</p>
+        <div class="contact">
+          <a href="mailto:hello@omada.wine" target="_blank"> <img class="some-logo" src="../some/mail-logo-red.svg" alt="instagram logo" /></a>
+          <p>hello@omada.wine</p>
         </div>
-        <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
       </article>
     </div><hr class="border-line-under" />
   </div>
@@ -99,36 +115,39 @@ import "../styles/style.css";
     width: 285px;
     margin: 5px 15px;
   }
-  .public {
-    /* sørg for at den kan åbne, når man klikker på knappen */
-    display: none;
-  }
-  .private {
-    /* sørg for at den kan åbne, når man klikker på knappen */
-    display: none;
-  }
-  .functions {
-    /* sørg for at den kan åbne, når man klikker på knappen */
-    display: none;
-  }
-  .price p {
-    line-height: 10px;
-  }
-  .dkk {
-    font-family: "aviano-sans", sans-serif;
-    font-weight: 700;
-    padding: 20px 0 5px;
-  }
 
-  .note {
-    font-style: italic;
-    font-size: 8px;
-    padding: 0 0 20px;
+  p {
+    text-align: center;
   }
   h4 {
     text-align: center;
     margin-bottom: 0;
     line-height: 30px;
+  }
+
+  h5 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  .some-logo {
+    height: 27px;
+    color: var(--omadaRed);
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0 5px;
+  }
+  .contact p {
+    color: var(--omadaRed);
+    font-family: "aviano-sans", sans-serif;
+    font-weight: 700;
+  }
+  .functions p {
+    margin: 10px;
   }
 
   #overskrift {
@@ -150,7 +169,6 @@ import "../styles/style.css";
     justify-content: center;
   }
 
-  .button-up,
   .button-down {
     position: relative;
     padding: 5px;
@@ -166,11 +184,6 @@ import "../styles/style.css";
     transform: translate3d(0, 5px, 0);
   }
 
-  .button-up:hover {
-    transform: translate3d(0, -5px, 0);
-  }
-
-  .button-up::after,
   .button-down::after {
     content: "";
     position: absolute;
@@ -180,23 +193,81 @@ import "../styles/style.css";
     height: 5px;
     border-top: 2px solid var(--omadaRed);
     border-left: 2px solid var(--omadaRed);
-  }
-  .button-up::after {
-    top: 2px;
-    transform: rotate(45deg);
-  }
 
-  .button-down::after {
     top: 5.5px;
     transform: rotate(225deg);
+  }
+  .public {
+    /* sørg for at den kan åbne, når man klikker på knappen */
+    /* display: none; */
+    margin-bottom: 15px;
+  }
+  .private {
+    /* sørg for at den kan åbne, når man klikker på knappen */
+    /* display: none; */
+  }
+  .functions {
+    /* sørg for at den kan åbne, når man klikker på knappen */
+    display: none;
+  }
+  .price p {
+    line-height: 10px;
+  }
+  .dkk {
+    font-family: "aviano-sans", sans-serif;
+    font-weight: 700;
+    padding: 20px 0 5px;
+  }
+
+  .note {
+    font-style: italic;
+    font-size: 8px;
+    padding: 0 0 20px;
   }
 
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
+    .tastings-container .open-tastings {
+      min-width: 350px;
+    }
+    .border-line-over {
+      width: 330px;
+    }
+
+    .border-line-under {
+      width: 330px;
+    }
+    article {
+      width: 320px;
+    }
   }
 
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
+    .tastings-container {
+      margin-top: 40px;
+    }
+    .tastings-container .open-tastings {
+      min-width: 66vw;
+    }
+    .border-line-over {
+      width: calc(66vw - 20px);
+    }
+
+    .border-line-under {
+      width: calc(66vw - 20px);
+      margin: 5px 5px 30px;
+    }
+    article {
+      width: calc(66vw - 30px);
+    }
+    h4 {
+      line-height: 50px;
+    }
+
+    .button-down::after {
+      top: 16.5px;
+    }
   }
 
   /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
@@ -204,3 +275,7 @@ import "../styles/style.css";
     max-width: 1500px;
   }
 </style>
+
+<script>
+  // her skal der være script, så menuerne kan åbne
+</script>
