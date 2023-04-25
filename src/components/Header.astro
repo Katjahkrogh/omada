@@ -10,11 +10,11 @@ import Tastings from "../components/Tastings.astro";
 <header>
   <div id="liste">
     <ul>
-      <li><a href="#" class="underline-effect">ABOUT</a></li>
-      <li><a href="#" class="underline-effect">SELECTIONS</a></li>
-      <li><a href="#" class="underline-effect">TASTINGS</a></li>
-      <li><a href="#" class="underline-effect">DELI GOODS</a></li>
-      <li><a href="#" class="underline-effect">SOCIALS</a></li>
+      <li><a href="#about_sec" class="underline-effect">ABOUT</a></li>
+      <li><a href="#menu" class="underline-effect">SELECTIONS</a></li>
+      <li><a href="#tastings" class="underline-effect">TASTINGS</a></li>
+      <li><a href="#deligoods" class="underline-effect">DELI GOODS</a></li>
+      <li><a href="#instagram" class="underline-effect">SOCIALS</a></li>
     </ul>
   </div>
   <div id="deli">
@@ -29,6 +29,10 @@ import Tastings from "../components/Tastings.astro";
 
 <style>
   /* Mobile first */
+
+  html {
+    scroll-behavior: smooth;
+  }
   #deli {
     display: flex;
     align-content: right;
