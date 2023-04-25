@@ -1,7 +1,9 @@
 ---
 import Form from "../components/Form.astro";
 import Testimonal from "../components/Testimonal.astro";
-// import Mainlayout from "../layouts/Mainlayout.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
+import "../styles/style.css";
+
 const url =
   "https://bwzhyxrwqgaljabpwzkv.supabase.co/rest/v1/Test_Omada?approved=is.true";
 const key =
@@ -19,18 +21,46 @@ const response = await fetch(url, {
 const udsagn = await response.json();
 ---
 
-<main>
+<section id="formular">
   <Form />
-  <ul>
-    {
-      udsagn.map((testimonal) => {
-        return (
-          <Testimonal
-            navn={testimonal.navn}
-            beskrivelse={testimonal.beskrivelse}
-          />
-        );
-      })
-    }
-  </ul>
-</main>
+  <br />
+  <hr class="hr_1" />
+  <hr class="hr_2" />
+  <h2>What our customers say</h2>
+  <hr class="hr_3" />
+  <section id="anmedelser">
+    <ul>
+      {
+        udsagn.map((testimonal) => {
+          return (
+            <Testimonal
+              navn={testimonal.navn}
+              beskrivelse={testimonal.beskrivelse}
+            />
+          );
+        })
+      }
+    </ul>
+  </section>
+</section>
+
+<style>
+  #anmedelser {
+    display: flex;
+    overflow-x: scroll;
+  }
+  .hr_1 {
+    width: 60vw;
+    margin-right: 40%;
+  }
+  .hr_2 {
+    width: 80vw;
+    margin-right: 40%;
+  }
+  .hr_3 {
+    width: 60vw;
+    margin-left: 40%;
+  }
+  @media screen and (min-width: 900px) {
+  }
+</style>

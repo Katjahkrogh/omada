@@ -3,6 +3,19 @@ const { navn, beskrivelse } = Astro.props;
 ---
 
 <li class="testimonial">
-  <h3>{navn}</h3>
-  <h3>{beskrivelse}</h3>
+  <h5>{navn}</h5>
+  <h5>{beskrivelse}</h5>
 </li>
+
+<style>
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 900px) {
+    h5 {
+      font-size: 20px;
+    }
+  }
+</style>
