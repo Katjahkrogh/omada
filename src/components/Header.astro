@@ -42,12 +42,14 @@ import Tastings from "../components/Tastings.astro";
 
   h1 {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 7%;
+    margin-bottom: 2%;
+    font-size: 1.5rem;
   }
 
   #liste {
-    position: fixed;
-    line-height: 1.3em;
+    position: absolute;
+    line-height: 1.4em;
     background-color: var(--backgroundBeige);
     opacity: 90%;
     z-index: 1;
@@ -85,17 +87,29 @@ import Tastings from "../components/Tastings.astro";
     background-color: var(--omadaRed);
     transition: width 0.5s ease-out;
   }
+  #time {
+    padding: 0.1%;
+    background-color: var(--omadaBlue);
+  }
+
+  h5 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: var(--backgroundBeige);
+  }
 
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
     h5 {
       font-size: 20px;
-      margin-top: 3%;
-      margin-bottom: 3%;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      color: var(--backgroundBeige);
     }
     h1 {
-      margin-bottom: 3%;
+      margin-bottom: 5%;
       margin-top: 5%;
+      font-size: 40px;
     }
     img {
       width: 60%;
@@ -146,6 +160,10 @@ import Tastings from "../components/Tastings.astro";
       left: 0;
       right: auto;
     }
+    #time {
+      padding: 0.1%;
+      background-color: var(--omadaBlue);
+    }
   }
 
   /* desktop format (over 900px)*/
@@ -153,11 +171,12 @@ import Tastings from "../components/Tastings.astro";
     img {
       width: 50%;
       margin-bottom: 0;
-      margin-top: 0;
+      margin-top: 5%;
     }
     h1 {
       margin-bottom: 3%;
-      margin-top: 2%;
+      margin-top: 6%;
+      font-size: 3.5rem;
     }
 
     h5 {
@@ -165,7 +184,6 @@ import Tastings from "../components/Tastings.astro";
       margin-top: 2%;
       margin-bottom: 2%;
       color: var(--backgroundBeige);
-      font-family: "aviano-sans", sans-serif;
     }
     #liste {
       position: fixed;
@@ -214,6 +232,78 @@ import Tastings from "../components/Tastings.astro";
 
     #time {
       padding: 0.1%;
+      background-color: var(--omadaBlue);
+    }
+  }
+
+  @media (min-width: 1400px) {
+    img {
+      width: 50%;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    h1 {
+      margin-bottom: 3%;
+      margin-top: 2%;
+      font-size: 4.4rem;
+      line-height: 3.5rem;
+      letter-spacing: 0.25em;
+    }
+
+    h5 {
+      font-size: 25px;
+      margin-top: 1.5%;
+      margin-bottom: 1.5%;
+      color: var(--backgroundBeige);
+    }
+    #liste {
+      position: fixed;
+      line-height: 3em;
+      background-color: var(--backgroundBeige);
+      opacity: 90%;
+      z-index: 1;
+      padding: 2%;
+    }
+
+    ul {
+      list-style-type: none;
+      text-align: left;
+    }
+
+    li a {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.15em;
+      max-width: 900px;
+      color: var(--midnight);
+    }
+
+    .underline-effect {
+      display: inline-block;
+      position: relative;
+    }
+
+    .underline-effect::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--omadaRed);
+      transition: width 0.5s ease-out;
+    }
+
+    .underline-effect:hover::before {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    #time {
+      padding: 0.1%;
+      background-color: var(--omadaBlue);
     }
   }
 </style>
