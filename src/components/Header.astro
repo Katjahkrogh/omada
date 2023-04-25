@@ -1,8 +1,22 @@
 ---
 import "../styles/style.css";
+import About from "../components/About.astro";
+import Deligoods from "../components/Deligoods.astro";
+import Instagram from "../components/Instagram.astro";
+import Menu from "../components/Menu.astro";
+import Tastings from "../components/Tastings.astro";
 ---
 
-<section>
+<header>
+  <div id="liste">
+    <ul>
+      <li><a href="#" class="underline-effect">ABOUT</a></li>
+      <li><a href="#" class="underline-effect">SELECTIONS</a></li>
+      <li><a href="#" class="underline-effect">TASTINGS</a></li>
+      <li><a href="#" class="underline-effect">DELI GOODS</a></li>
+      <li><a href="#" class="underline-effect">SOCIALS</a></li>
+    </ul>
+  </div>
   <div id="deli">
     <img
       src="../public/illustrations/delicaties.svg"
@@ -10,39 +24,127 @@ import "../styles/style.css";
     />
   </div>
   <h1>OMADA WINE & DELI</h1>
-  <hr />
-  <h5>Open wed-sun 11-20</h5>
-  <hr />
-</section>
+  <div id="time"><h5>Open wed-sun 11-20</h5></div>
+</header>
 
 <style>
   /* Mobile first */
-
   #deli {
     display: flex;
     align-content: right;
     justify-content: right;
+    margin-left: 10%;
   }
   img {
     width: 60%;
+    margin-top: 8%;
   }
 
   h1 {
     text-align: center;
+    margin-top: 5%;
+  }
+
+  #liste {
+    position: fixed;
+    line-height: 1.3em;
+    background-color: var(--backgroundBeige);
+    opacity: 90%;
+    z-index: 1;
+    padding: 1%;
+    padding-left: 3%;
+    padding-top: 2%;
+  }
+
+  ul {
+    list-style-type: none;
+    text-align: left;
+  }
+
+  li a {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    max-width: 900px;
+    color: var(--midnight);
+  }
+
+  .underline-effect {
+    display: inline-block;
+    position: relative;
+  }
+
+  .underline-effect::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--omadaRed);
+    transition: width 0.5s ease-out;
   }
 
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
     h5 {
-      font-size: 25px;
+      font-size: 20px;
       margin-top: 3%;
       margin-bottom: 3%;
     }
     h1 {
       margin-bottom: 3%;
+      margin-top: 5%;
     }
     img {
-      width: 50%;
+      width: 60%;
+      margin-top: 5%;
+    }
+
+    #liste {
+      position: fixed;
+      line-height: 2.5em;
+      background-color: var(--backgroundBeige);
+      opacity: 90%;
+      z-index: 1;
+      padding: 1%;
+    }
+
+    ul {
+      list-style-type: none;
+      text-align: left;
+    }
+
+    li a {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.15em;
+      max-width: 900px;
+      color: var(--midnight);
+    }
+
+    .underline-effect {
+      display: inline-block;
+      position: relative;
+    }
+
+    .underline-effect::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--omadaRed);
+      transition: width 0.5s ease-out;
+    }
+
+    .underline-effect:hover::before {
+      width: 100%;
+      left: 0;
+      right: auto;
     }
   }
 
@@ -50,15 +152,68 @@ import "../styles/style.css";
   @media (min-width: 900px) {
     img {
       width: 50%;
+      margin-bottom: 0;
+      margin-top: 0;
     }
     h1 {
       margin-bottom: 3%;
+      margin-top: 2%;
     }
 
     h5 {
-      font-size: 30px;
+      font-size: 25px;
       margin-top: 2%;
       margin-bottom: 2%;
+      color: var(--backgroundBeige);
+      font-family: "aviano-sans", sans-serif;
+    }
+    #liste {
+      position: fixed;
+      line-height: 3em;
+      background-color: var(--backgroundBeige);
+      opacity: 90%;
+      z-index: 1;
+      padding: 2%;
+    }
+
+    ul {
+      list-style-type: none;
+      text-align: left;
+    }
+
+    li a {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.15em;
+      max-width: 900px;
+      color: var(--midnight);
+    }
+
+    .underline-effect {
+      display: inline-block;
+      position: relative;
+    }
+
+    .underline-effect::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--omadaRed);
+      transition: width 0.5s ease-out;
+    }
+
+    .underline-effect:hover::before {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    #time {
+      padding: 0.1%;
     }
   }
 </style>
