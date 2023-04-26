@@ -1,5 +1,6 @@
 ---
 import "../styles/style.css";
+import TastingForm from "./Tasting-form.astro";
 ---
 
 <section id="tastings">
@@ -17,12 +18,19 @@ import "../styles/style.css";
       <!-- open tastings åbne vindue -->
       <article class="public hide" id="public-article">
         <h5 class="public">Open Wine Tasting</h5>
-        <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
+        <p>
+          Once a month you’re invited to join our open wine tasting and sample
+          the curated selection of natural wines in omada.wine’s monthly
+          subscription box.
+        </p>
         <div class="price">
           <p class="dkk">DKK 145,-</p>
           <p class="note">per person <br /> including 6 tasting glasses.</p>
         </div>
-        <p>Check out this page, subscribe to our newsletter or social media for upcoming dates.</p>
+        <p>
+          Check out this page, subscribe to our newsletter or social media for
+          upcoming dates.
+        </p>
       </article>
     </div><hr class="border-line-under" />
 
@@ -32,29 +40,45 @@ import "../styles/style.css";
       </div>
       <!-- private tastings åbne vindue -->
       <article class="private hide" id="private-article">
-        <p>We do custom tailored private tastings and functions to fit your exact needs.</p>
-        <p>And otherwise we offer the following plug and play solutions (minimum 4 people and up to 30):</p>
+        <p>
+          We do custom tailored private tastings and functions to fit your exact
+          needs.
+        </p>
+        <p>
+          And otherwise we offer the following plug and play solutions (minimum
+          4 people and up to 30):
+        </p>
 
         <h5>Intro to Mixed fermentation</h5>
-        <p>A quick session on cider, fruit pét-nat and other mixed fermentations. Approximately 1 hour.</p>
+        <p>
+          A quick session on cider, fruit pét-nat and other mixed fermentations.
+          Approximately 1 hour.
+        </p>
         <div class="price">
           <p class="dkk">DKK 199,-</p>
           <p class="note">per person <br /> (with snacks + DKK 49,-)</p>
         </div>
 
         <h5>Natural Wine: 101</h5>
-        <p>A general introduction to the world of natural wine, its history, values, style and taste. Approximately 1 hour.</p>
+        <p>
+          A general introduction to the world of natural wine, its history,
+          values, style and taste. Approximately 1 hour.
+        </p>
         <div class="price">
           <p class="dkk">DKK 349,-</p>
           <p class="note">per person <br /> (with snacks + DKK 75,-)</p>
         </div>
 
         <h5>Natural Wine: Deep Cuts from the Cellar</h5>
-        <p>A tour de force in natural wine with some of our high-end cuvées and rare vintages, curated from our cellar. Approximately 1-2 hours.</p>
+        <p>
+          A tour de force in natural wine with some of our high-end cuvées and
+          rare vintages, curated from our cellar. Approximately 1-2 hours.
+        </p>
         <div class="price">
           <p class="dkk">DKK 499,-</p>
           <p class="note">per person <br /> (with snacks + DKK 75,-)</p>
         </div>
+        <TastingForm />
       </article>
     </div>
     <hr class="border-line-under" />
@@ -65,11 +89,23 @@ import "../styles/style.css";
       </div>
       <!-- private functions åbne vindue -->
       <article class="functions hide" id="functions-article">
-        <p>Host your next private or business function in Omada Wine & Deli; a unique and intimate setting for special occasions and celebrations.</p>
-        <p>Can’t make it to Østerbro? No problem! We also rent out our tap systems and tasting glasses for private functions and events.</p>
+        <p>
+          Host your next private or business function in Omada Wine & Deli; a
+          unique and intimate setting for special occasions and celebrations.
+        </p>
+        <p>
+          Can’t make it to Østerbro? No problem! We also rent out our tap
+          systems and tasting glasses for private functions and events.
+        </p>
         <p>Contact us for more information.</p>
         <div class="contact">
-          <a href="mailto:hello@omada.wine" target="_blank"> <img class="some-logo" src="../some/mail-logo-red.svg" alt="mail logo" /></a>
+          <a href="mailto:hello@omada.wine" target="_blank">
+            <img
+              class="some-logo"
+              src="../some/mail-logo-red.svg"
+              alt="mail logo"
+            /></a
+          >
           <p>hello@omada.wine</p>
         </div>
       </article>

@@ -1,0 +1,184 @@
+---
+import "../styles/style.css";
+---
+
+<section>
+  <div id="tasting-form">
+    <div id="overskrift">
+      <h6>BOOK TASTING</h6>
+      <hr />
+    </div>
+    <form>
+      <label for="navn">Your name</label>
+      <input type="text" name="navn" required />
+      <label for="email">Your email</label>
+      <input type="text" name="email" required />
+      <label for="nummer">Your phone number</label>
+      <input type="text" name="nummer" required />
+      <label for="nummer">Your phone number</label>
+      <input type="text" name="nummer" required />
+      <label for="tasting-type">Type of tasting:</label>
+      <select id="tasting-type" name="tasting-type">
+        <option value="" disabled selected>-Please choose an option-</option>
+        <option value="mixed-fermentation">Intro to mixed fermentation</option>
+        <option value="natural-wine-101">Natural wine: 101</option>
+        <option value="natural-wine-deep-cuts"
+          >Natural wine: deep cuts from the cellar</option
+        >
+      </select>
+      <label for="attendings">How many will attend?</label>
+      <input type="text" name="attendings" required />
+      <label for="date">Which day would you like to book?</label>
+      <input type="date" name="date" required />
+      <label for="comments">Any comments og requests? (optional)</label>
+      <input type="text" name="comments" id="comments" />
+      <button>Request</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+  }
+
+  label {
+    margin-bottom: 1%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0.15em;
+    max-width: 900px;
+    color: var(--midnight);
+  }
+
+  #comments {
+    height: 180px;
+  }
+
+  input {
+    margin-bottom: 5%;
+    padding: 1%;
+  }
+
+  select {
+    margin-bottom: 2%;
+    padding: 1%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--midnight);
+  }
+
+  h6 {
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+  }
+
+  #overskrift {
+    text-align: center;
+    margin-top: 2%;
+  }
+
+  #tasting-form {
+    border: 1px solid var(--omadaRed);
+    border-radius: 20px;
+    width: 60vw;
+    margin-bottom: 2%;
+  }
+
+  button {
+    width: 20vw;
+    margin-bottom: 2%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--backgroundBeige);
+    background-color: var(--midnight);
+    padding: 3%;
+  }
+
+  @media (min-width: 600px) {
+    #tasting-form {
+      border: 1px solid var(--omadaRed);
+      border-radius: 20px;
+      width: 45vw;
+      margin-bottom: 2%;
+    }
+
+    button {
+      width: 12vw;
+      font-size: 11px;
+      padding: 3%;
+    }
+
+    select {
+      font-size: 12px;
+    }
+
+    label {
+      font-size: 12px;
+    }
+
+    input {
+      margin-bottom: 3%;
+    }
+
+    label {
+      margin-bottom: 0.5%;
+    }
+
+    h6 {
+      margin-top: 5%;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    #tasting-form {
+      border: 1px solid var(--omadaRed);
+      border-radius: 20px;
+      width: 45vw;
+      margin-bottom: 2%;
+    }
+
+    button {
+      width: 8vw;
+      font-size: 12px;
+      padding: 2%;
+    }
+
+    select {
+      font-size: 12px;
+    }
+
+    label {
+      font-size: 12px;
+    }
+
+    input {
+      margin-bottom: 3%;
+    }
+
+    label {
+      margin-bottom: 0.5%;
+    }
+    h6 {
+      margin-top: 1%;
+    }
+  }
+</style>
