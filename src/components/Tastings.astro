@@ -10,12 +10,12 @@ import "../styles/style.css";
   <hr class="line2" />
   <div class="tastings-container">
     <hr class="border-line-over" /><div class="open-tastings">
-      <div class="button-display">
+      <div class="button-display" id="public-btn">
         <h4>Puplic tastings</h4><div class="button-down"></div>
       </div>
 
       <!-- open tastings åbne vindue -->
-      <article class="public hide">
+      <article class="public hide" id="public-article">
         <h5 class="public">Open Wine Tasting</h5>
         <p>Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box.</p>
         <div class="price">
@@ -27,11 +27,11 @@ import "../styles/style.css";
     </div><hr class="border-line-under" />
 
     <hr class="border-line-over" /><div class="open-tastings">
-      <div class="button-display">
+      <div class="button-display" id="private-btn">
         <h4>Private tastings</h4><div class="button-down"></div>
       </div>
       <!-- private tastings åbne vindue -->
-      <article class="private hide">
+      <article class="private hide" id="private-article">
         <p>We do custom tailored private tastings and functions to fit your exact needs.</p>
         <p>And otherwise we offer the following plug and play solutions (minimum 4 people and up to 30):</p>
 
@@ -60,11 +60,11 @@ import "../styles/style.css";
     <hr class="border-line-under" />
 
     <hr class="border-line-over" /><div class="open-tastings">
-      <div class="button-display">
+      <div class="button-display" id="functions-btn">
         <h4>Private functions</h4><div class="button-down"></div>
       </div>
       <!-- private functions åbne vindue -->
-      <article class="functions hide">
+      <article class="functions hide" id="functions-article">
         <p>Host your next private or business function in Omada Wine & Deli; a unique and intimate setting for special occasions and celebrations.</p>
         <p>Can’t make it to Østerbro? No problem! We also rent out our tap systems and tasting glasses for private functions and events.</p>
         <p>Contact us for more information.</p>
@@ -278,13 +278,44 @@ import "../styles/style.css";
 
 <script>
   // her skal der være script, så menuerne kan åbne
-  const tastingsPublic = document.querySelector("public");
-  const tastingsPrivate = document.querySelector("private");
-  const functionsPrivate = document.querySelector("functions");
+  // const tastingsPublic = document.querySelector("public");
+  // const tastingsPrivate = document.querySelector("private");
+  // const functionsPrivate = document.querySelector("functions");
 
-  tastingsPublic.addEventListener("click", openBox);
+  // tastingsPublic.addEventListener("click", openBox);
 
-  function openBox() {
-    tastingsPublic.classList.remove("hide");
-  }
+  // function openBox() {
+  //   tastingsPublic.classList.remove("hide");
+  // }
+
+  const publicButton = document.getElementById("public-btn");
+  const publicArticle = document.getElementById("public-article");
+  const privateButton = document.getElementById("private-btn");
+  const privateArticle = document.getElementById("private-article");
+  const functionsButton = document.getElementById("functions-btn");
+  const functionsArticle = document.getElementById("functions-article");
+
+  publicButton.addEventListener("click", () => {
+    if (publicArticle.classList.contains("hide")) {
+      publicArticle.classList.remove("hide");
+    } else {
+      publicArticle.classList.add("hide");
+    }
+  });
+
+  privateButton.addEventListener("click", () => {
+    if (privateArticle.classList.contains("hide")) {
+      privateArticle.classList.remove("hide");
+    } else {
+      privateArticle.classList.add("hide");
+    }
+  });
+
+  functionsButton.addEventListener("click", () => {
+    if (functionsArticle.classList.contains("hide")) {
+      functionsArticle.classList.remove("hide");
+    } else {
+      functionsArticle.classList.add("hide");
+    }
+  });
 </script>
