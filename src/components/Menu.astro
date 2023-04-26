@@ -4,43 +4,71 @@ import "../styles/style.css";
 
 <section id="menu">
   <h5>TRY OUR LOCALLY SOURCED DELICACIES</h5>
-  <div class="container">
-    <img
-      src="../illustrations/delicaties.svg"
-      alt="Delikatesse food illustration"
-      id="deli"
-    />
+  <div class="container-deli">
+    <img src="../illustrations/delicaties.svg" alt="Delikatesse food illustration" id="deli" />
   </div>
   <h5>TASTE OUR SELECTION OF NATURAL WINES</h5>
   <div class="container">
-    <img
-      src="../illustrations/vin-illustrationer.png"
-      alt="Illustrationer af vin"
-      id="vin"
-    />
+    <div class="wine-container">
+      <img class="wine" src="../illustrations/White@2x-1.webp" alt="wine illustration" />
+      <h6>white</h6>
+    </div>
+    <div class="wine-container">
+      <img class="wine" src="../illustrations/Orange@2x-2.webp" alt="wine illustration" /><h6>orange</h6>
+    </div>
+    <div class="wine-container">
+      <img class="wine" src="../illustrations/Rose@2x-2.webp" alt="wine illustration" /><h6>rosé</h6>
+    </div>
+    <div class="wine-container">
+      <img class="wine" src="../illustrations/Red@2x-1.webp" alt="wine illustration" /><h6>red</h6>
+    </div>
+    <div class="wine-container">
+      <img class="wine" src="../illustrations/Bubbles-Copy@2x.webp" alt="wine illustration" /><h6>Bubbles</h6>
+    </div>
+    <div class="wine-container">
+      <img class="wine" src="../illustrations/Mixed-fermentation@2x-1.webp" alt="wine illustration" /><h6>Mixed <br /> fermentation</h6>
+    </div>
   </div>
 </section>
 
 <style>
   /* Mobile first */
-
+  #menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .container {
     display: flex;
-    justify-content: center;
+    overflow-x: scroll;
+  }
+  .wine-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+  }
+
+  .wine {
+    height: 100px;
+    margin: 10px;
+  }
+  h6 {
+    text-transform: uppercase;
   }
   h5 {
     margin-top: 5%;
     margin-bottom: 5%;
   }
 
-  #deli {
-    width: 60%;
+  .container-deli {
+    display: flex;
+    justify-content: center;
   }
 
-  #vin {
-    width: 92%;
+  #deli {
+    width: 70%;
   }
+
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {
     h5 {
@@ -48,7 +76,12 @@ import "../styles/style.css";
     }
     #deli {
       width: 50%;
-  }
+    }
+
+    .wine {
+      height: 150px;
+      margin: 20px;
+    }
   }
   /* desktop format (over 900px)*/
   @media (min-width: 900px) {
@@ -58,10 +91,5 @@ import "../styles/style.css";
     #deli {
       width: 50%;
     }
-  }
-
-  /* sørger for at sektionerne på en meget stor skærm ikke bliver for brede */
-  section {
-    max-width: 1500px;
   }
 </style>
