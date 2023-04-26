@@ -2,6 +2,7 @@
 import About from "../components/About.astro";
 import Deligoods from "../components/Deligoods.astro";
 import Footer from "../components/Footer.astro";
+import Form from "../components/Form.astro";
 import Header from "../components/Header.astro";
 import Instagram from "../components/Instagram.astro";
 import Menu from "../components/Menu.astro";
@@ -9,9 +10,7 @@ import Tastings from "../components/Tastings.astro";
 import "../styles/style.css";
 ---
 
-<script
-  src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
-></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <main>
   <Header />
@@ -19,15 +18,9 @@ import "../styles/style.css";
   <Menu />
   <Tastings />
   <Deligoods />
+  <Form />
   <Instagram />
-  <a href="#header"
-    ><lottie-player
-      src="https://assets9.lottiefiles.com/packages/lf20_xjm3bcjy.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay></lottie-player></a
-  >
+  <a href="#header"><lottie-player src="https://assets9.lottiefiles.com/packages/lf20_xjm3bcjy.json" background="transparent" speed="1" loop autoplay></lottie-player></a>
   <Footer />
 </main>
 
