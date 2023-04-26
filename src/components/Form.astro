@@ -1,81 +1,235 @@
 ---
+import "../styles/style.css";
 ---
 
-<form>
-  <label for="navn">Navn</label>
-  <input type="text" name="navn" required />
-  <label for="beskrivelse">Besked</label>
-  <input type="text" name="beskrivelse" required />
-  <button>Send</button>
-</form>
-<script>
-  const url = "https://bwzhyxrwqgaljabpwzkv.supabase.co/rest/v1/Test_Omada";
-  const key =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3emh5eHJ3cWdhbGphYnB3emt2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc4NTUzOSwiZXhwIjoxOTk0MzYxNTM5fQ.5smRtnAz3FsKaJbRhwP6wxfXYCogrpdRPYJnDryGDAo";
-  const form = document.querySelector("form");
-  form.addEventListener("submit", sendForm);
+<section>
+  <hr class="line1" />
+  <hr class="line2" />
+  <div class="tastings-container">
+    <hr class="border-line-over" />
+    <div class="open-tastings">
+      <div class="button-display">
+        <h4>Submit a review</h4><div class="button-down"></div>
+      </div>
+    </div><hr class="border-line-under" />
+    <form>
+      <label for="navn">Name</label>
+      <input type="text" name="navn" required />
+      <label for="beskrivelse">Rewiew</label>
+      <input class="stortfelt" type="text" name="beskrivelse" required />
+      <button>Send</button>
+    </form>
+    <hr class="border-line-under" />
+  </div>
 
-  function sendForm(event) {
-    event.preventDefault();
-    const formData = form.elements;
-    let navn = formData.navn.value;
-    let beskrivelse = formData.beskrivelse.value;
-    // console.log(formData);
-
-    fetch(url, {
-      method: "POST",
-      headers: {
-        apikey: key,
-        Accept: "application/json",
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ navn, beskrivelse }),
-    });
-  }
-</script>
-<style>
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  label {
-    margin-bottom: 10px;
-    font-family: "aviano-sans", sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0.15em;
-    color: var(--omadaRed);
-  }
-
-  input {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
-    width: 80%;
-  }
-
-  button {
-    padding: 12px 30px;
-    background-color: var(--omadaRed);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 16px;
-  }
-  @media screen and (min-width: 900px) {
-    button {
-      padding: 12px 40px;
-      font-size: 20px;
+  <style>
+    /* Titel med boks ––––––––––––––––––––––––––––––––––––––––– */
+    .tastings-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
     }
+    /* justerer de ydre kanter rundt om menuerne */
+    .tastings-container .open-tastings {
+      min-width: 200px;
+      border-left: 1px var(--omadaRed) solid;
+      border-right: 1px var(--omadaRed) solid;
+    }
+
+    /* justerer de øvre og nedre kanter rundt om menuerne */
+    .border-line-over {
+      width: 180px;
+      margin: 5px;
+    }
+
+    .border-line-under {
+      width: 180px;
+      margin: 5px 5px;
+    }
+
+    .button-display {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-down {
+      position: relative;
+      padding: 5px;
+      margin: 5px;
+      background: var(--backgroundBeige);
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      transition: all 0.2s linear;
+    }
+
+    .button-down:hover {
+      transform: translate3d(0, 5px, 0);
+    }
+
+    .button-down::after {
+      content: "";
+      position: absolute;
+      left: 6.4px;
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-top: 2px solid var(--omadaRed);
+      border-left: 2px solid var(--omadaRed);
+
+      top: 5.5px;
+      transform: rotate(225deg);
+    }
+
+    h4 {
+      text-align: center;
+      margin-bottom: 0;
+      line-height: 30px;
+    }
+
+    /* ––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+    form {
+      display: flex;
+      flex-direction: column;
+      /* padding: 50px; */
+      min-width: 200px;
+      border-left: 1px var(--omadaRed) solid;
+      border-right: 1px var(--omadaRed) solid;
+    }
+
+    .line1 {
+      width: 40vw;
+      margin-left: 60%;
+      margin-top: 50px;
+    }
+    .line2 {
+      width: 60vw;
+      margin-left: 40%;
+      margin-top: 30px;
+    }
+
     label {
-      font-size: 25px;
+      font-family: "Open Sans", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.35em;
+      margin: 10px 20px;
+      justify-self: left;
+      color: var(--omadaRed);
     }
-  }
-</style>
+
+    input {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      align-self: center;
+    }
+
+    .stortfelt {
+      height: 120px;
+    }
+
+    button {
+      padding: 1em 2em;
+      margin-bottom: 10px;
+      background-color: var(--omadaRed);
+      color: #fff;
+      border: none;
+      border-radius: 1em;
+      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      font-size: 12px;
+      align-self: center;
+    }
+    @media (min-width: 600px) {
+      .tastings-container .open-tastings,
+      form {
+        min-width: 350px;
+      }
+      .border-line-over {
+        width: 330px;
+      }
+
+      .border-line-under {
+        width: 330px;
+      }
+      label {
+        margin-left: 35px;
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (min-width: 900px) {
+      .tastings-container {
+        margin-top: 40px;
+      }
+      .tastings-container .open-tastings,
+      form {
+        min-width: 66vw;
+      }
+      .border-line-over {
+        width: calc(66vw - 20px);
+      }
+
+      .border-line-under {
+        width: calc(66vw - 20px);
+        margin: 5px 5px 30px;
+      }
+      h4 {
+        line-height: 50px;
+      }
+
+      .button-down::after {
+        top: 16.5px;
+      }
+
+      button {
+        padding: 12px 40px;
+        font-size: 20px;
+      }
+      label {
+        font-size: 18px;
+        margin-left: 60px;
+      }
+
+      button {
+        font-size: 18px;
+      }
+    }
+  </style>
+  <script>
+    const url = "https://bwzhyxrwqgaljabpwzkv.supabase.co/rest/v1/Test_Omada";
+    const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3emh5eHJ3cWdhbGphYnB3emt2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc4NTUzOSwiZXhwIjoxOTk0MzYxNTM5fQ.5smRtnAz3FsKaJbRhwP6wxfXYCogrpdRPYJnDryGDAo";
+    const form = document.querySelector("form");
+    form.addEventListener("submit", sendForm);
+
+    function sendForm(event) {
+      event.preventDefault();
+      const formData = form.elements;
+      let navn = formData.navn.value;
+      let beskrivelse = formData.beskrivelse.value;
+      // console.log(formData);
+
+      fetch(url, {
+        method: "POST",
+        headers: {
+          apikey: key,
+          Accept: "application/json",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ navn, beskrivelse }),
+      });
+    }
+  </script>
+</section>

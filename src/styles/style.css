@@ -66,17 +66,6 @@ h3 {
   color: var(--omadaRed);
 }
 
-h6 {
-  font-family: "aviano-sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 10px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.25em;
-  color: var(--omadaRed);
-}
-
 h4 {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
@@ -98,6 +87,16 @@ h5 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--midnight);
+}
+h6 {
+  font-family: "aviano-sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.25em;
+  color: var(--omadaRed);
 }
 
 p {
