@@ -3,19 +3,33 @@ const { navn, beskrivelse } = Astro.props;
 ---
 
 <li class="testimonial">
-  <h5>{navn}</h5>
-  <h5>{beskrivelse}</h5>
+  <h6>{navn}</h6>
+  <p>{beskrivelse}</p>
 </li>
 
 <style>
   .testimonial {
-    display: flex;
-    flex-direction: column;
+    list-style: none;
+    margin: 10px;
+  }
+  h6 {
+    color: var(--omadaRed);
+    max-width: 120px;
+    text-align: left;
   }
 
-  @media screen and (min-width: 900px) {
-    h5 {
-      font-size: 20px;
+  p {
+    min-width: 120px;
+    word-break: break-word;
+  }
+  @media (min-width: 600px) {
+    p {
+      min-width: 200px;
+    }
+  }
+  @media (min-width: 900px) {
+    p {
+      min-width: 280px;
     }
   }
 </style>

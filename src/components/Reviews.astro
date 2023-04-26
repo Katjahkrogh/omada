@@ -1,0 +1,53 @@
+---
+import Testimonal from "../components/Testimonal.astro";
+import "../styles/style.css";
+
+const url = "https://bwzhyxrwqgaljabpwzkv.supabase.co/rest/v1/Test_Omada?approved=is.true";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3emh5eHJ3cWdhbGphYnB3emt2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc4NTUzOSwiZXhwIjoxOTk0MzYxNTM5fQ.5smRtnAz3FsKaJbRhwP6wxfXYCogrpdRPYJnDryGDAo";
+
+const response = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: key,
+    Accept: "application/json",
+    "Content-type": "application/json",
+  },
+});
+
+const udsagn = await response.json();
+---
+
+<section id="formular">
+  <h5>What our customers say:</h5>
+  <hr class="line1" />
+  <ul>
+    {
+      udsagn.map((testimonal) => {
+        return <Testimonal navn={testimonal.navn} beskrivelse={testimonal.beskrivelse} />;
+      })
+    }
+  </ul>
+  <hr class="line2" />
+</section>
+
+<style>
+  h5 {
+    margin: 40px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    margin: 30px 0;
+  }
+  .line1 {
+    width: 50vw;
+    margin-left: 50vw;
+  }
+  .line2 {
+    width: 85vw;
+    margin-right: 15vw;
+  }
+  @media screen and (min-width: 900px) {
+  }
+</style>
